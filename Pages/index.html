@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OriTech — Online Tech Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--primary:#007bff;--secondary:#6c757d;--bg:#f6f8fb;--dark:#1c1c1e;--light:#fff;--radius:12px;}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--dark);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{width:92%;max-width:1200px;margin:0 auto}
+
+    /* Header */
+    .site-header{background:var(--light);box-shadow:0 2px 10px rgba(0,0,0,.06);position:sticky;top:0;z-index:50}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;gap:1rem}
+    .logo img{height:42px}
+    .main-nav ul{display:flex;gap:1.25rem;list-style:none}
+    .main-nav a{font-weight:600;opacity:.9}
+    .main-nav a:hover,.main-nav a[aria-current="page"]{color:var(--primary)}
+    .header-cta{display:flex;gap:.75rem;align-items:center}
+    .btn{display:inline-block;padding:.65rem 1.1rem;border-radius:var(--radius);font-weight:700;transition:.2s}
+    .btn--primary{background:var(--primary);color:#fff}.btn--primary:hover{filter:brightness(.95)}
+    .btn--secondary{background:var(--secondary);color:#fff}.btn--secondary:hover{filter:brightness(.95)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;padding:3.5rem 0}
+    .hero h1{font-size:2.6rem;line-height:1.15;margin-bottom:.75rem}
+    .hero p{max-width:56ch;margin-bottom:1.25rem;opacity:.9}
+    .hero img{width:100%;border-radius:var(--radius)}
+
+    /* Sections / cards */
+    .section-header{text-align:center;margin:3rem 0 1.25rem}
+    .grid{display:grid;gap:1.5rem}
+    .grid--3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{background:var(--light);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);overflow:hidden;transition:transform .2s}
+    .card:hover{transform:translateY(-6px)}
+    .card img{width:100%;height:210px;object-fit:cover}
+    .card-content{padding:1rem}
+    .card h3{margin-bottom:.35rem}
+    .price{color:var(--primary);font-weight:800;margin:.3rem 0}
+
+    /* Newsletter */
+    .newsletter{background:var(--primary);color:#fff;padding:2.2rem 1rem;margin:3rem 0;border-radius:var(--radius);text-align:center}
+    .newsletter form{display:flex;justify-content:center;gap:.5rem;margin-top:1rem;flex-wrap:wrap}
+    .newsletter input{padding:.85rem 1rem;border:none;border-radius:var(--radius);min-width:260px;outline:none}
+
+    /* Order (quick) */
+    .order-section{margin:3rem 0}
+    .order-section form{background:var(--light);padding:1.5rem;border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);max-width:640px;margin:auto}
+    .form-group{margin-bottom:1rem}
+    label{display:block;margin-bottom:.35rem;font-weight:600}
+    input,select{width:100%;padding:.8rem;border:1px solid #e4e7ec;border-radius:10px}
+
+    /* Footer */
+    .site-footer{background:var(--dark);color:#b8b9bd;text-align:center;padding:2rem 1rem;margin-top:3rem}
+    .site-footer a{color:#fff;text-decoration:underline}
+
+    /* Responsive */
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="OriTech Home">
+        <img src="Assets/make a logo for a we.png" alt="OriTech logo">
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="products.html#cart" class="btn btn--primary">Cart <span class="cart-count">0</span></a>
+        <a href="#" class="btn btn--secondary">Sign in</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero container">
+    <div>
+      <h1>Transparent pricing. Reliable delivery. Exceptional support.</h1>
+      <p>Shop phones, laptops, and accessories with trusted warranties and fast delivery across South Africa.</p>
+      <a href="products.html" class="btn btn--primary">Shop Now</a>
+    </div>
+    <div><img src="Assets/tech-store-displays-stockcake.jpg" alt="Featured devices"></div>
+  </section>
+
+  <main class="container" id="catalog">
+    <header class="section-header">
+      <h2>Shop by Category</h2>
+      <p>Explore our curated selection of phones, laptops, and accessories.</p>
+    </header>
+
+    <div class="grid grid--3">
+      <article class="card">
+        <img src="Assets/Iphone Titanium.jfif" alt="iPhone 15 Pro">
+        <div class="card-content">
+          <h3>iPhone 15 Pro</h3>
+          <p>A17 Pro, Titanium, 128GB</p>
+          <p class="price">R22,999</p>
+          <a href="products.html#phones" class="btn btn--primary">View</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="Assets/img-MacBook-Pro-Retina-14-Inch-92084.jpg" alt="MacBook Pro 14 M3">
+        <div class="card-content">
+          <h3>MacBook Pro 14” M3</h3>
+          <p>M3, 16GB RAM, 512GB SSD</p>
+          <p class="price">R39,999</p>
+          <a href="products.html#laptops" class="btn btn--primary">View</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="Assets/apple-airpods-pro-1576658686.jpg" alt="AirPods Pro 2">
+        <div class="card-content">
+          <h3>AirPods Pro (2nd Gen)</h3>
+          <p>ANC, MagSafe Charging</p>
+          <p class="price">R4,499</p>
+          <a href="products.html#accessories" class="btn btn--primary">View</a>
+        </div>
+      </article>
+    </div>
+
+    <section class="newsletter">
+      <h2>Stay Updated</h2>
+      <p>Subscribe for new product drops and launch promos.</p>
+      <form onsubmit="event.preventDefault();alert('Subscribed!');">
+        <input type="email" placeholder="Enter your email" aria-label="Email address" required>
+        <button class="btn btn--secondary" type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <section id="order" class="order-section">
+      <h2 style="text-align:center;margin-bottom:.6rem">Quick Order</h2>
+      <form onsubmit="event.preventDefault();alert('Order received. We\'ll email you shortly.');">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input id="name" type="text" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input id="email" type="email" required>
+        </div>
+        <div class="form-group">
+          <label for="product">Select Product</label>
+          <select id="product" required>
+            <option value="">— Choose —</option>
+            <option>iPhone 15 Pro</option>
+            <option>MacBook Pro 14” M3</option>
+            <option>AirPods Pro (2nd Gen)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="address">Delivery Address</label>
+          <input id="address" type="text" required>
+        </div>
+        <button class="btn btn--primary" type="submit" style="width:100%">Submit Order</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 OriTech. All Rights Reserved. • <a href="contact.html">Support</a></p>
+  </footer>
+</body>
+</html>
